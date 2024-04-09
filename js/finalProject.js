@@ -9,12 +9,15 @@ $(function(){
         });
         // same as tetris for pong
     $("Article").on( "mouseenter", "#pong", function(){
-            $(this).children().first().html("<p>Pong</p> <br> <p>A fun left to right pong game. Potentially two players</p>");
+            $(this).children().first().html("<p>Pong</p> <br> <p>A fun left to right, two player pong game.  </p>");
         });
 
     $("Article").on( "mouseleave", "#pong", function(){
             $(this).children().first().html("<p>Pong</p>");
         });
+    $("#pong").on("click", function(){
+        $(window).attr("pong/pong.html", "test");
+    });
         // same as tetris for cup
     $("Article").on( "mouseenter", "#cup", function(){
             $(this).children().first().html("<p>Cup Game</p> <br> <p>A ball will be placed in a cup, follow it with your eyes as it is shuffled. Difficulty may be variable.</p>");
@@ -23,4 +26,8 @@ $(function(){
     $("Article").on( "mouseleave", "#cup", function(){
             $(this).children().first().html("<p>Cup Game</p>");
         });
+});
+var pongLink = document.getElementById("pong");
+pongLink.addEventListener('click', function() {
+    window.location.href = 'pong/pong.html';
 });

@@ -1,0 +1,50 @@
+body{
+    background: url(../media/pongBackground.png) no-repeat center center fixed;
+    text-align: center;
+    margin: 180px auto 30px;
+}
+label{
+    color: #F1E4E8;
+    font-family: consolas;
+}
+button{
+    font-family: consolas;
+    font-size: large;
+    background-color: black;
+    color: #F1E4E8;
+}
+#difficulty{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    background:#96d8e5 ;
+    border-radius: 3px;
+}
+#difficulty::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #EA526F;
+    cursor:pointer;
+    border-radius: 5px;
+}
+#difficulty::-moz-range-thumb{
+    width: 15px;
+    height: 15px;
+    background: #EA526F;
+    cursor:pointer;
+    border-radius: 5px;
+}
+.controls-container{
+    margin: 0 auto 60px;
+}
+a:link{
+color: #18DCF2;
+}
+a:visited{
+    color: #CD533B;
+}
+a:hover{
+    color: #FFFFFF;
+}
