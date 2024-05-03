@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Cup game</title>
+    <meta charset="utf-8" lang="en-us">
+    <link rel="stylesheet" href="css/cup.css">
+    <script src = "https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<noscript>JavaScript must be enabled to view this page.  Your browser does not support JavaScript</noscript>
+
+</head>
+<body>
+    <h1>Shell Game</h1>
+    <p id="instructions">Can you guess which cup the ball is in?</p>
+    <div class="score-container">
+        <p>Score: </p> <p id="score">0</p>
+    </div>
+    <div class="cup-container">
+        <div class="cups" id="cup1"><img src="media/digitized cup3-small.png" alt="cup 1"> </div>
+        <div class="cups" id="cup2"><img src="media/digitized cup3-small.png" alt="cup 2"> </div>
+        <div class="cups" id="cup3"><img src="media/digitized cup3-small.png" alt="cup 3"> </div>
+        <div class="cups" id="ball"><img id="moon" src="media/FhC3OS2VEAMqwFr.jpg" alt="ball"></div>
+    </div>
+    <input type="range" max="5" min="1" id="difficulty"> 
+    <label >Difficulty: </label><label id="difDisplay">3</label>
+    <br><br>
+    <button id="shuffleCups">Shuffle Cups</button>
+    <br><br><br>
+    <a id="readme" href="readme.txt">Confused? Try the readme!</a>
+
+    <script src="js/cup.js"></script>
+</body>

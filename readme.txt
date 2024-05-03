@@ -7,13 +7,13 @@ This project showcases my use of HTML, CSS, and Javascript/JQuery.
 A main page links to three different minigames, each using different languages learned in class.
 
 Tetris
-A tetris game with somewhat limited capability. I'm not sure I'd be able to make the entire thing scroll downwards.
+A mini tetris game. No difficulty settings or block rotations
 
 Pong
-A fun left to right pong game. Potentially two players
+A fun left to right, two player pong game.
 
-Cup
-A ball will be placed in a cup, follow it with your eyes as it is shuffled. Difficulty may be variable.
+Shell
+Can you guess which cup has the ball? Try our different difficulty modes!
 
 
 ## Usage
@@ -24,7 +24,7 @@ Click on the game to open the minigame, hover for a description.
 ## Copyright
 
 These files are not to be redistributed. Please don't copy them or call them your own.
-Background image by starline on Freepik.com
+All images are my own.
 
 
 ## Contact

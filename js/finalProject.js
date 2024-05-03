@@ -1,7 +1,7 @@
 $(function(){
     // Any article object with id tetris will change when mouse enters
     $("Article").on( "mouseenter", "#tetris", function(){
-            $(this).children().first().html("<p>Tetris</p> <br> <p>A tetris game with somewhat limited capability. I'm not sure I'd be able to make the entire thing scroll downwards.</p>");
+            $(this).children().first().html("<p>Tetris</p> <br> <p>A mini tetris game. No difficulty settings or block rotations.</p>");
         });
     // any article object with id tetris will change back once mouse leaves
     $("Article").on( "mouseleave", "#tetris", function(){
@@ -19,15 +19,23 @@ $(function(){
         $(window).attr("pong/pong.html", "test");
     });
         // same as tetris for cup
-    $("Article").on( "mouseenter", "#cup", function(){
-            $(this).children().first().html("<p>Cup Game</p> <br> <p>A ball will be placed in a cup, follow it with your eyes as it is shuffled. Difficulty may be variable.</p>");
+    $("Article").on( "mouseenter", "#shell", function(){
+            $(this).children().first().html("<p>Shell Game</p> <br> <p>Can you guess which cup has the ball? Try our different difficulty modes! </p>");
         });
 
-    $("Article").on( "mouseleave", "#cup", function(){
-            $(this).children().first().html("<p>Cup Game</p>");
+    $("Article").on( "mouseleave", "#shell", function(){
+            $(this).children().first().html("<p>Shell Game</p>");
         });
 });
 var pongLink = document.getElementById("pong");
 pongLink.addEventListener('click', function() {
     window.location.href = 'pong/pong.html';
+});
+var shellLink = document.getElementById("shell");
+shellLink.addEventListener('click', function() {
+    window.location.href = 'cup/cup.html';
+});
+var tetrisLink = document.getElementById("tetris");
+tetrisLink.addEventListener('click', function() {
+    window.location.href = 'tetris/tetris2.html';
 });

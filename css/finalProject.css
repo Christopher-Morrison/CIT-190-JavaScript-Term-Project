@@ -48,9 +48,27 @@ div{
 }
 #pong{
     background:url(../media/pong_thumbnail.png) no-repeat center center;
-    background-color: black;
+    background-color: #04080F;
     background-size: contain;
     margin: 10 10;
+}
+#shell:hover{
+    background: #04080F;
+}
+#shell{
+    background:url(../media/shell_thumbnail.png) no-repeat center center;
+    background-color: #04080F;
+    background-size: contain;
+    margin: 10 10;
+}
+#tetris{
+    background:url(../media/tetris_thumbnail.png) no-repeat center center;
+    background-color: #04080F;
+    background-size: contain;
+    margin: 10 10;
+}
+#tetris:hover{
+    background: #04080F;
 }
 p{
     color: white;

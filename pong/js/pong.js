@@ -84,73 +84,74 @@ var myGameArea = {
     }
 }
 
-function component(width, height, color, x, y, type, score, timer=0) {
-    this.type = type;
-    this.score = score;
-    this.width = width;
-    this.height = height;
-    this.vectorX = 0; // vector is for ball movement
-    this.vectorY = 0;
-    this.speedY = 0; // speed is for paddle movement   
-    this.x = x;
-    this.y = y;    
-    this.update = function() {
-        ctx = myGameArea.context;
-        if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
-            ctx.fillText(this.text, this.x, this.y);
-        } 
-        else {
-            ctx.beginPath();
-            ctx.fillStyle = color;
-            ctx.roundRect(this.x, this.y, this.width, this.height, 5);
-            ctx.fill();
-            // ctx.fillRect(this.x, this.y, this.width, this.height);
-        }
-    }
-    // This moves the paddles. 
-    this.newPos = function() {
-        // this.x += this.speedX;
-        this.y += this.speedY;       
-        myGameArea.advanceTimer();
-            
-    }
-    // change ball X direction
-    this.changeVectX = function(){
-        if (myGameArea.timer <=0 ){ // solution to double bounces
-            if (this.vectorX < 0) 
-            {rightScore.score +=1}
-        else {leftScore.score +=1}
-        this.vectorX *= -1;
-        myGameArea.timer = 60; // solution to double bounces
-        }
+class component {
+    constructor(width, height, color, x, y, type, score, timer = 0) {
+        this.type = type;
+        this.score = score;
+        this.width = width;
+        this.height = height;
+        this.vectorX = 0; // vector is for ball movement
+        this.vectorY = 0;
+        this.speedY = 0; // speed is for paddle movement   
+        this.x = x;
+        this.y = y;
+        this.update = function () {
+            var ctx = myGameArea.context;
+            if (this.type == "text") {
+                ctx.font = this.width + " " + this.height;
+                ctx.fillStyle = color;
+                ctx.fillText(this.text, this.x, this.y);
+            }
+            else {
+                ctx.beginPath();
+                ctx.fillStyle = color;
+                ctx.roundRect(this.x, this.y, this.width, this.height, 5);
+                ctx.fill();
+                // ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+        };
+        // This moves the paddles. 
+        this.newPos = function () {
+            // this.x += this.speedX;
+            this.y += this.speedY;
+            myGameArea.advanceTimer();
 
-    } // invert y direction when bouncing off walls
-    this.changeVectY = function(){
-        this.vectorY *= -1;
-    }
-    // This moves the ball
-    this.newPos2 = function(){ // rename this
-        this.x -= this.vectorX;
-        this.y += this.vectorY;
+        };
+        // change ball X direction
+        this.changeVectX = function () {
+            if (myGameArea.timer <= 0) { // solution to double bounces
+                if (this.vectorX < 0) { rightScore.score += 1; }
+                else { leftScore.score += 1; }
+                this.vectorX *= -1;
+                myGameArea.timer = 60; // solution to double bounces
+            }
 
-    }
-    // checks for crash. 
-    this.bounce = function(otherobj) { 
-        var myleft = this.x;           
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
-        var crash = true;
-        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-            crash = false;
-        }
-        return crash;
+        }; // invert y direction when bouncing off walls
+        this.changeVectY = function () {
+            this.vectorY *= -1;
+        };
+        // This moves the ball
+        this.newPos2 = function () {
+            this.x -= this.vectorX;
+            this.y += this.vectorY;
+
+        };
+        // checks for crash. 
+        this.bounce = function (otherobj) {
+            var myleft = this.x;
+            var myright = this.x + (this.width);
+            var mytop = this.y;
+            var mybottom = this.y + (this.height);
+            var otherleft = otherobj.x;
+            var otherright = otherobj.x + (otherobj.width);
+            var othertop = otherobj.y;
+            var otherbottom = otherobj.y + (otherobj.height);
+            var crash = true;
+            if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+                crash = false;
+            }
+            return crash;
+        };
     }
 }
 

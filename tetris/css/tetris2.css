@@ -1,0 +1,28 @@
+body{
+    margin: 100px auto;
+    text-align: center;
+    background-color: #04080F;
+}
+h1{
+    font-family: consolas;
+    color: white;
+}
+
+p{
+    font-family: consolas;
+    color: white;
+}
+.score-container{
+    margin: auto;
+    justify-content: center;
+    display: flex;
+}
+a:link{
+    color: #18DCF2;
+}
+a:visited{
+    color: #CD533B;
+}
+a:hover{
+    color: #FFFFFF;
+}
